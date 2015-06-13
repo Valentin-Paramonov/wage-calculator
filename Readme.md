@@ -1,0 +1,4 @@
+Wagr
+===========
+A wage calculator
+
