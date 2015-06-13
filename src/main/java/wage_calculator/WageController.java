@@ -1,7 +1,12 @@
 package wage_calculator;
 
-/**
- * Created by valentine-personal on 15.13.6.
- */
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class WageController {
+    @RequestMapping("/hello")
+    public String ayHi() {
+        return "Hello!";
+    }
 }
