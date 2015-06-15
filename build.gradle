@@ -1,15 +1,17 @@
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath('org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE')
+        classpath 'com.bluepapa32:gradle-watch-plugin:0.1.5'
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'spring-boot'
+apply plugin: 'com.bluepapa32.watch'
 
 jar {
     baseName = 'wage-calculator'
@@ -24,12 +26,20 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.boot:spring-boot-starter-jetty')
-    compile('org.springframework.boot:spring-boot-starter-actuator')
-    testCompile('org.codehaus.groovy:groovy-all:2.4.3')
-    testCompile('org.spockframework:spock-core:1.0-groovy-2.4')
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-jetty'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'com.domingosuarez.boot:spring-boot-starter-jade4j:0.3.0'
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.3'
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
+watch {
+    resources {
+        files files('src/main/resources')
+        tasks 'processResources'
+    }
 }
 
 task wrapper(type: Wrapper) {
