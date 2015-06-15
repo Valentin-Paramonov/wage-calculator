@@ -1,4 +1,4 @@
-Wagr
+Wage Calculator
 ===========
 A wage calculator
 
