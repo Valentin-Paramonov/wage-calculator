@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class TemplateController {
-    @RequestMapping("/")
-    public String index() {
-        return "index";
+    @RequestMapping("/js-calculator")
+    public String jsCalculator() {
+        return "js-calculator";
     }
 }

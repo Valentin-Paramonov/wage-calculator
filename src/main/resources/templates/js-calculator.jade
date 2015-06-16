@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Wage Calculator
+    link(rel='stylesheet', href='css/style.css')
+  body
+    div#calculator
+      form
+        table
+          tr
+            td Bruto:
+            td
+              input(type='text', maxlength='10')#bruto
+          tr
+            td Neto:
+            td 
+              input(type='text', disabled)#neto
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.18/require.min.js')
+    script(src='js/config.js')
+    script(src='js/js-calculator.js')

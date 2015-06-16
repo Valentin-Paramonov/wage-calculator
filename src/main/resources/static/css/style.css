@@ -1,0 +1,10 @@
+#calculator.div {
+    float: left;
+    clear: both;
+}
+
+#calculator input {
+    text-align: right;
+    margin-left: 10px;
+    width: 90px;
+}
