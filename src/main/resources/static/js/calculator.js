@@ -1,14 +1,24 @@
-define(function() {
-    var MIN = 75.00;
-    return {
-        toNeto: function(bruto) {
-            if (bruto < MIN) {
-                return NaN;
-            }
-            bruto = bruto.toFixed(2);
-            var social = 0.1005 * bruto;
-            var iin = ((bruto - social - 75) * 0.23).toFixed(2);
-            return (bruto - social - iin).toFixed(2);
+require(['jquery', 'calculator'], function($, calculator) {
+    var toNumber = function(input) {
+        var number = Number(input);
+        if (isNaN(number)) {
+            throw new Error(input + ' is not a number!');
+        }
+        return number;
+    };
+
+    var recalculateNetto = function(brutoInput) {
+        try {
+            var bruto = toNumber(brutoInput);
+            $('#neto').val(calculator.toNeto(bruto) || '');
+        } catch(err) {
+            console.error(err.message);
         }
     };
+
+    $('#bruto').keyup(function(event) {
+        event.preventDefault();
+        var brutoInput = $(this).val();
+        recalculateNetto(brutoInput);
+    });
 });

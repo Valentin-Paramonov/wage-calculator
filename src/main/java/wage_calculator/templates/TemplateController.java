@@ -9,4 +9,9 @@ public class TemplateController {
     public String jsCalculator() {
         return "js-calculator";
     }
+
+    @RequestMapping("/ajax-calculator")
+    public String ajaxCalculator() {
+        return "ajax-calculator";
+    }
 }

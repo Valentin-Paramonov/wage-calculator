@@ -1,24 +1,24 @@
-require(['jquery', 'calculator'], function($, calculator) {
-    var toNumber = function(input) {
-        var number = Number(input);
-        if (isNaN(number)) {
-            throw new Error(input + ' is not a number!');
-        }
-        return number;
+define(function() {
+    var TAX_FREE_MIN = 75.00;
+    var SOCIAL_TAX = 0.1005;
+    var IIN_TAX = 0.23;
+
+    var toNeto = function(bruto) {
+        bruto = bruto.toFixed(2);
+        var social = (SOCIAL_TAX * bruto).toFixed(2);
+        var iin = ((bruto - social - TAX_FREE_MIN) * IIN_TAX).toFixed(2);
+        return (bruto - social - iin).toFixed(2);
     };
 
-    var recalculateNetto = function(brutoInput) {
-        try {
-            var bruto = toNumber(brutoInput);
-            $('#neto').val(calculator.toNeto(bruto) || '');
-        } catch(err) {
-            console.error(err.message);
+    return {
+        toNeto: function(bruto) {
+            if (bruto < 0) {
+                return NaN;
+            }
+            if (bruto <= TAX_FREE_MIN) {
+                return bruto;
+            }
+            return toNeto(bruto);
         }
     };
-
-    $('#bruto').keyup(function(event) {
-        event.preventDefault();
-        var brutoInput = $(this).val();
-        recalculateNetto(brutoInput);
-    });
 });
