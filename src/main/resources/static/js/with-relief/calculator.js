@@ -6,7 +6,7 @@ define(['jquery'], function($) {
                 bruto: bruto,
                 persons: persons
             }).done(function(neto) {
-                $('#neto').val(neto);
+                $('#neto').html(neto);
             }).fail(function(error) {
                 console.error(error.message);
             });

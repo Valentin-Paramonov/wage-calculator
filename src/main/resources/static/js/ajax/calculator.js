@@ -5,7 +5,7 @@ define(['jquery'], function($) {
             $.get(host + '/neto', {
                 bruto: bruto
             }).done(function(neto) {
-                $('#neto').val(neto);
+                $('#neto').html(neto);
             }).fail(function(error) {
                 console.error(error.message);
             });

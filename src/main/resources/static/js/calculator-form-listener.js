@@ -7,11 +7,11 @@ require(['jquery', 'calculator'], function($, calculator) {
         if (isNaN(number)) {
             throw new Error(input + ' is not a number!');
         }
-        return number;
+        return number.toFixed(2);
     };
 
     var recalculateNetto = function(brutoInput) {
-        $('#neto').val(calculator.toNeto(bruto, persons) || '');
+        $('#neto').html(calculator.toNeto(bruto, persons) || '');
     };
 
     $('#bruto').keyup(function(event) {
