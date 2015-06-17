@@ -2,7 +2,7 @@ package wage_calculator.calculator;
 
 import java.math.BigDecimal;
 
-class BigDecimalUtils {
+final class BigDecimalUtils {
     static BigDecimal decimal(double val, int scale) {
         return toFixed(new BigDecimal(val), scale);
     }

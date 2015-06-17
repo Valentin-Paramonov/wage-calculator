@@ -7,11 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TemplateController {
     @RequestMapping("/js-calculator")
     public String jsCalculator() {
-        return "js-calculator";
+        return "js/calculator";
     }
 
     @RequestMapping("/ajax-calculator")
     public String ajaxCalculator() {
-        return "ajax-calculator";
+        return "ajax/calculator";
+    }
+
+    @RequestMapping("/calculator-with-relief")
+    public String calculatorWithRelief() {
+        return "with-relief/calculator";
     }
 }

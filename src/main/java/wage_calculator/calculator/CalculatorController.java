@@ -11,9 +11,11 @@ import java.math.BigDecimal;
 @RestController
 public class CalculatorController {
     @RequestMapping("/neto")
-    public BigDecimal toNeto(@RequestParam(required = true) BigDecimal bruto, HttpServletResponse response) {
+    public BigDecimal toNeto(@RequestParam BigDecimal bruto,
+                             @RequestParam(required = false, defaultValue = "0") Integer persons,
+                             HttpServletResponse response) {
         try {
-            return WageCalculator.toNeto(bruto);
+            return WageCalculatorManager.toNetoWithRelief(bruto, persons);
         } catch (IllegalArgumentException iea) {
             response.setStatus(HttpStatus.BAD_REQUEST_400);
             return null;

@@ -28,4 +28,16 @@ class CalculatorControllerSpec extends Specification {
             controller.perform(MockMvcRequestBuilders.get('/neto').param("bruto", "69"))
                 .andExpect(status().isOk()).andExpect(content().string(equalTo("69.00")));
     }
+
+    def "When proper amount and zero persons is provided, unchanged neto with OK status should be returned"() {
+        expect:
+            controller.perform(MockMvcRequestBuilders.get('/neto').param("bruto", "69").param("persons", "0"))
+                .andExpect(status().isOk()).andExpect(content().string(equalTo("69.00")));
+    }
+
+    def "When proper amount and the number of persons is provided, proper neto with OK status should be returned"() {
+        expect:
+            controller.perform(MockMvcRequestBuilders.get('/neto').param("bruto", "420").param("persons", "5"))
+                .andExpect(status().isOk()).andExpect(content().string(equalTo("420.00")));
+    }
 }
