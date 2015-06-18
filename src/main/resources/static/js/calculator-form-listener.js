@@ -7,7 +7,7 @@ require(['jquery', 'calculator'], function($, calculator) {
         if (isNaN(number)) {
             throw new Error(input + ' is not a number!');
         }
-        return number.toFixed(2);
+        return number;
     };
 
     var recalculateNetto = function(brutoInput) {

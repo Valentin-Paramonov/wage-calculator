@@ -16,7 +16,7 @@ define(function() {
                 return NaN;
             }
             if (bruto <= TAX_FREE_MIN) {
-                return bruto;
+                return bruto.toFixed(2);
             }
             return toNeto(bruto);
         }
