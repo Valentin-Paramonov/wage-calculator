@@ -21,4 +21,9 @@ public class CalculatorController {
             return null;
         }
     }
+
+    @RequestMapping("/expenses")
+    public BigDecimal expenses(@RequestParam BigDecimal bruto) {
+        return ExpenseCalculator.calculateFor(bruto);
+    }
 }

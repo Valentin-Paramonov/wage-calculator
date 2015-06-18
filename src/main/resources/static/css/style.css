@@ -9,7 +9,7 @@
     width: 90px;
 }
 
-#neto {
+#neto, #expenses {
     text-align: right;
     margin-left: 10px;
     width: 90px;

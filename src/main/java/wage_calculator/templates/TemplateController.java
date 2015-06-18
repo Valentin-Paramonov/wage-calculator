@@ -19,4 +19,9 @@ public class TemplateController {
     public String calculatorWithRelief() {
         return "with-relief/calculator";
     }
+
+    @RequestMapping("/calculator-with-expenses")
+    public String calculatorWithExpenses() {
+        return "with-expenses/calculator";
+    }
 }
