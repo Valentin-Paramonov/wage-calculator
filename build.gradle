@@ -13,6 +13,9 @@ apply plugin: 'groovy'
 apply plugin: 'spring-boot'
 apply plugin: 'com.bluepapa32.watch'
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 jar {
     baseName = 'wage-calculator'
     version = '0.0.1'
@@ -22,14 +25,12 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web'
-    compile 'org.springframework.boot:spring-boot-starter-jetty'
-    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile('org.springframework.boot:spring-boot-starter-web') {
+        exclude module: 'spring-boot-starter-tomcat'
+    }
     compile 'com.domingosuarez.boot:spring-boot-starter-jade4j:0.3.0'
+    compile 'org.springframework.boot:spring-boot-starter-jetty'
     testCompile 'org.codehaus.groovy:groovy-all:2.4.3'
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
