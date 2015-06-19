@@ -2,8 +2,8 @@ package wage_calculator.calculator;
 
 import java.math.BigDecimal;
 
-import static wage_calculator.calculator.BigDecimalUtils.decimal;
-import static wage_calculator.calculator.BigDecimalUtils.toFixed;
+import static wage_calculator.BigDecimalUtils.decimal;
+import static wage_calculator.BigDecimalUtils.toFixed;
 
 final class ExpenseCalculator {
     static final BigDecimal EXPENSE_FACTOR = decimal(1.2359, 4);

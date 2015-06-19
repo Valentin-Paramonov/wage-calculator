@@ -2,7 +2,7 @@ package wage_calculator.calculator;
 
 import java.math.BigDecimal;
 
-import static wage_calculator.calculator.BigDecimalUtils.*;
+import static wage_calculator.BigDecimalUtils.*;
 import static wage_calculator.calculator.WageCalculator.RELIEF_PER_PERSON;
 import static wage_calculator.calculator.WageCalculator.TAX_FREE_MIN;
 

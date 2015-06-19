@@ -6,6 +6,9 @@ define(function() {
         },
         getExpensesUrl: function() {
             return host + '/expenses';
+        },
+        getJpyUrl: function() {
+            return host + '/jpy';
         }
     }
 });

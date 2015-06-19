@@ -6,11 +6,11 @@
 #calculator input {
     text-align: right;
     margin-left: 10px;
-    width: 90px;
+    width: 130px;
 }
 
-#neto, #expenses {
+#neto, #expenses, #jpy {
     text-align: right;
     margin-left: 10px;
-    width: 90px;
+    width: 130px;
 }
